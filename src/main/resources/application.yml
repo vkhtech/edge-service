@@ -75,7 +75,6 @@ spring:
       port: 6379
       timeout: 1s
   session:
-    store-type: redis
     timeout: 10m
     redis:
       namespace: polar:edge
