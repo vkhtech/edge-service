@@ -13,8 +13,6 @@ java {
     }
 }
 
-description = 'API gateway and cross-cutting concerns.'
-
 description = 'Provides API gateway and cross-cutting concerns.'
 
 repositories {
