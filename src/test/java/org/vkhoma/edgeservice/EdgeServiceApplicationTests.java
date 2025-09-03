@@ -12,23 +12,23 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@Testcontainers
+//@Testcontainers
 class EdgeServiceApplicationTests {
 
-    private static final int REDIS_PORT = 6379;
+//    private static final int REDIS_PORT = 6379;
 
-    @Container
-    static GenericContainer<?> redis = new GenericContainer<>(DockerImageName.parse("redis:7.2"))
-            .withExposedPorts(REDIS_PORT);
+//    @Container
+//    static GenericContainer<?> redis = new GenericContainer<>(DockerImageName.parse("redis:7.2"))
+//            .withExposedPorts(REDIS_PORT);
 
     @MockBean
     ReactiveClientRegistrationRepository clientRegistrationRepository;
 
-    @DynamicPropertySource
-    static void redisProperties(DynamicPropertyRegistry registry) {
-        registry.add("spring.redis.host", () -> redis.getHost());
-        registry.add("spring.redis.port", () -> redis.getMappedPort(REDIS_PORT));
-    }
+//    @DynamicPropertySource
+//    static void redisProperties(DynamicPropertyRegistry registry) {
+//        registry.add("spring.redis.host", () -> redis.getHost());
+//        registry.add("spring.redis.port", () -> redis.getMappedPort(REDIS_PORT));
+//    }
 
     @Test
     void verifyThatSpringContextLoads() {

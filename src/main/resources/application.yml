@@ -33,14 +33,14 @@ spring:
           max-idle-time: 15s
           max-life-time: 60s
       default-filters:
-        - SaveSession
+#        - SaveSession
         - TokenRelay
-        - name: RequestRateLimiter
-          args:
-            redis-rate-limiter:
-              replenishRate: 10
-              burstCapacity: 20
-              requestedTokens: 1
+#        - name: RequestRateLimiter
+#          args:
+#            redis-rate-limiter:
+#              replenishRate: 10
+#              burstCapacity: 20
+#              requestedTokens: 1
         - name: Retry
           args:
             retries: 3
@@ -133,7 +133,7 @@ management:
         enabled: true
       group:
         readiness:
-          include: readinessState,redis
+          include: readinessState
   info:
     env:
       enabled: true
